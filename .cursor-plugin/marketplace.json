@@ -1,0 +1,19 @@
+{
+  "name": "anew",
+  "owner": {
+    "name": "Maxim Leyzerovich"
+  },
+  "metadata": {
+    "description": "anew.page — encode a self-contained HTML document into a shareable URL.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "anew",
+      "source": "./",
+      "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one.",
+      "category": "integrations",
+      "logo": "assets/anew.svg"
+    }
+  ]
+}

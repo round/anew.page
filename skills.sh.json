@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Publish",
+      "description": "Turn a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one.",
+      "skills": ["anew"]
+    }
+  ]
+}

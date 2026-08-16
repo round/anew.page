@@ -1,0 +1,5 @@
+<svg viewBox="8 7.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>path {color: #000; stroke: currentColor} @media (prefers-color-scheme: dark) {path {color: #fff}}</style>
+<view id="logo" viewBox="0 0 48 48"/>
+<path stroke="#000" stroke-width="2" stroke-linecap="round" d="M35 32L23.0708 14.565C22.585 13.855 22.3421 13.5 22 13.5C21.6579 13.5 21.415 13.855 20.9292 14.565L9 32M22.3421 32L35 13.5M14.81 23.5H40"/>
+</svg>

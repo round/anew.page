@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "anew",
+  "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read any anew.page URL back to its HTML source. The whole page lives in the link — no account, no storage, no server-side state.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Maxim Leyzerovich",
+    "url": "https://github.com/round"
+  },
+  "homepage": "https://anew.page",
+  "repository": "https://github.com/round/anew-plugin",
+  "license": "ISC",
+  "keywords": [
+    "html",
+    "publishing",
+    "share",
+    "url",
+    "static-site",
+    "mcp"
+  ]
+}

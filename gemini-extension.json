@@ -1,0 +1,11 @@
+{
+  "name": "anew",
+  "version": "1.0.0",
+  "description": "Turn a self-contained HTML document into a shareable anew.page URL, and read any anew.page URL back to its HTML source.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "anew": {
+      "httpUrl": "https://anew.page/mcp"
+    }
+  }
+}

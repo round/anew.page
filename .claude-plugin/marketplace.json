@@ -1,0 +1,24 @@
+{
+  "name": "anew",
+  "description": "Plugins for anew.page — encode a self-contained HTML document into a shareable URL.",
+  "owner": {
+    "name": "Maxim Leyzerovich",
+    "url": "https://github.com/round"
+  },
+  "plugins": [
+    {
+      "name": "anew",
+      "source": "./",
+      "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read any anew.page URL back to its HTML source.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Maxim Leyzerovich",
+        "url": "https://github.com/round"
+      },
+      "homepage": "https://anew.page",
+      "license": "ISC",
+      "category": "productivity",
+      "keywords": ["html", "publishing", "share", "url", "mcp"]
+    }
+  ]
+}

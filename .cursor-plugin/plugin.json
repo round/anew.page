@@ -1,0 +1,30 @@
+{
+  "name": "anew",
+  "displayName": "anew",
+  "version": "1.0.0",
+  "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
+  "author": {
+    "name": "Maxim Leyzerovich"
+  },
+  "homepage": "https://anew.page",
+  "repository": "https://github.com/round/anew-plugin",
+  "license": "ISC",
+  "logo": "assets/anew.svg",
+  "category": "integrations",
+  "keywords": [
+    "anew",
+    "html",
+    "mcp",
+    "publishing",
+    "url",
+    "sharing",
+    "webpage",
+    "static-site"
+  ],
+  "tags": [
+    "anew",
+    "mcp",
+    "html",
+    "publishing"
+  ]
+}

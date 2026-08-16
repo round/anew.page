@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "anew": {
+      "type": "http",
+      "url": "https://anew.page/mcp"
+    }
+  }
+}

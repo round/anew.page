@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "anew",
+  "version": "1.0.0",
+  "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
+  "author": {
+    "name": "Maxim Leyzerovich",
+    "url": "https://github.com/round"
+  },
+  "homepage": "https://anew.page",
+  "repository": "https://github.com/round/anew-plugin",
+  "license": "ISC",
+  "keywords": [
+    "anew",
+    "html",
+    "mcp",
+    "publishing",
+    "url",
+    "sharing",
+    "webpage",
+    "static-site"
+  ]
+}
