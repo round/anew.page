@@ -2,7 +2,7 @@
 
 ## Reporting
 
-Report a vulnerability by opening a [security advisory](https://github.com/round/anew-plugin/security/advisories/new)
+Report a vulnerability by opening a [security advisory](https://github.com/round/anew.page/security/advisories/new)
 on this repository. Please do not open a public issue for anything exploitable.
 
 ## What this server does

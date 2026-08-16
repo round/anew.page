@@ -21,13 +21,13 @@ claude mcp add --transport http anew https://anew.page/mcp
 **Gemini CLI**
 
 ```
-gemini extensions install https://github.com/round/anew-plugin
+gemini extensions install https://github.com/round/anew.page
 ```
 
 **Agent Skills**
 
 ```
-npx skills add round/anew-plugin
+npx skills add round/anew.page
 ```
 
 The skill also installs straight from the site, with no repository involved:
@@ -92,7 +92,7 @@ and Gemini wants `"httpUrl"`. All three point at the same endpoint.
 
 The server is unauthenticated by design: it accepts HTML and returns a URL, holds no accounts,
 and stores no page content. Report anything that looks wrong to
-[the issue tracker](https://github.com/round/anew-plugin/issues) — see [SECURITY.md](SECURITY.md).
+[the issue tracker](https://github.com/round/anew.page/issues) — see [SECURITY.md](SECURITY.md).
 
 ## License
 
