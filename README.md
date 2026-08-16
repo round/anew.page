@@ -49,6 +49,10 @@ server.json         MCP registry entry
 The three MCP bindings say the same thing three ways because the ecosystems disagree on the key.
 All point at the same endpoint.
 
+## Documentation and policies
+
+[Docs](DOCS.md) · [Privacy](PRIVACY.md) · [Terms](TERMS.md) · [Support](SUPPORT.md)
+
 ## License
 
 ISC © Maxim Leyzerovich
