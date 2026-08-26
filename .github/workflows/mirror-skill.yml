@@ -4,20 +4,20 @@
 #
 # The copy is only as trustworthy as the fetch, so the bytes are checked against the digest the skills
 # index publishes for them before anything is committed. A captive portal, an error page or a partial
-# response fails that comparison and the job stops with the file untouched.
+# response fails that comparison and nothing is written.
 name: Mirror the served skill
 
 on:
-  schedule:
-    # Daily. A skill change ships with a deploy, so the mirror is never more than a day behind it;
-    # run the workflow by hand to close that gap immediately.
-    - cron: '17 6 * * *'
+  # The deploy that changes the skill runs this by hand (`npm run deploy`), so the mirror moves with
+  # the release rather than a day behind it. The schedule is the backstop for a deploy from elsewhere.
   workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
 
 permissions:
   contents: write
 
-# One mirror at a time: a scheduled run and a manual one landing together would race on the push.
+# One mirror at a time: a nudge from a deploy and the nightly run landing together would race on the push.
 concurrency:
   group: mirror-skill
 
@@ -30,16 +30,27 @@ jobs:
       - name: Fetch the served skill and verify its published digest
         run: |
           set -euo pipefail
-          curl -fsS --retry 3 --retry-all-errors -o skill.fetched \
-            https://anew.page/.well-known/agent-skills/anew/SKILL.md
-          curl -fsS --retry 3 --retry-all-errors -o index.fetched \
-            https://anew.page/.well-known/agent-skills/index.json
-          published=$(jq -er '.skills[] | select(.name == "anew") | .digest' index.fetched)
-          actual="sha256:$(sha256sum skill.fetched | cut -d ' ' -f 1)"
-          if [ "$published" != "$actual" ]; then
-            echo "::error::the index publishes $published for anew, but the bytes served hash to $actual"
-            exit 1
-          fi
+          attempts=6
+          for attempt in $(seq 1 $attempts); do
+            curl -fsS --retry 3 --retry-all-errors -o skill.fetched \
+              https://anew.page/.well-known/agent-skills/anew/SKILL.md
+            curl -fsS --retry 3 --retry-all-errors -o index.fetched \
+              https://anew.page/.well-known/agent-skills/index.json
+            published=$(jq -er '.skills[] | select(.name == "anew") | .digest' index.fetched)
+            actual="sha256:$(sha256sum skill.fetched | cut -d ' ' -f 1)"
+            if [ "$published" = "$actual" ]; then
+              break
+            fi
+            # Expected while a deploy is still propagating: the two documents can come from edges on
+            # either side of the release, and the digest is the only thing that can tell. Waiting is
+            # the fix — a mismatch that outlives the loop is a real one and fails the job.
+            echo "::notice::attempt $attempt/$attempts — the index publishes $published, the bytes hash to $actual"
+            if [ "$attempt" = "$attempts" ]; then
+              echo "::error::the served skill never matched its published digest; the repo copy is untouched"
+              exit 1
+            fi
+            sleep 15
+          done
           mv skill.fetched skills/anew/SKILL.md
           rm index.fetched
 
