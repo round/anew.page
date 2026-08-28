@@ -70,7 +70,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -F - -- "$path" <<EOF
-          skill: sync SKILL.md with the deployed copy (+$adds/-$dels)
+          SKILL.md update (+$adds/-$dels)
 
           anew.page now serves these bytes at
           https://anew.page/.well-known/agent-skills/anew/SKILL.md — they matched
