@@ -63,20 +63,14 @@ jobs:
             echo "the repo copy already is the served skill"
             exit 0
           fi
-          # The message is read off the diff it records: how far the file moved and which version it
-          # now carries, with the source and its verified digest in the body.
+          # The message is read off the diff it records: how far the file moved in the subject,
+          # the source and its verified digest in the body.
           adds=$(git diff --numstat -- "$path" | cut -f 1)
           dels=$(git diff --numstat -- "$path" | cut -f 2)
-          oldv=$(git show "HEAD:$path" | sed -n 's/^ *version: "\([^"]*\)".*/\1/p' | head -n 1)
-          newv=$(sed -n 's/^ *version: "\([^"]*\)".*/\1/p' "$path" | head -n 1)
-          bump=''
-          if [ -n "$oldv" ] && [ -n "$newv" ] && [ "$oldv" != "$newv" ]; then
-            bump=", $oldv -> $newv"
-          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -F - -- "$path" <<EOF
-          skill: sync SKILL.md with the deployed copy (+$adds/-$dels$bump)
+          skill: sync SKILL.md with the deployed copy (+$adds/-$dels)
 
           anew.page now serves these bytes at
           https://anew.page/.well-known/agent-skills/anew/SKILL.md — they matched
