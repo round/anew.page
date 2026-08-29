@@ -44,4 +44,4 @@ of your use of the service.
 
 ## Contact
 
-<maxim@flora.ai>
+[Open an issue](https://github.com/round/anew.page/issues). anew publishes no contact address.

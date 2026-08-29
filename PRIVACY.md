@@ -40,7 +40,8 @@ hosting provider. No other processor receives this data.
   not receive the page, so it cannot appear in any log.
 - **Deletion** is inherent: stop sharing the URL and the page is unreachable. There is no copy to
   request the removal of.
-- **Questions, or a request about your data:** <maxim@flora.ai>
+- **Questions, or a request about your data:** [open an issue](https://github.com/round/anew.page/issues). There is no address to
+  write to, and no data held about you for one to be needed.
 
 ## Treat published pages as public
 
