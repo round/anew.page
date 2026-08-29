@@ -51,7 +51,7 @@ All point at the same endpoint.
 
 ## Documentation and policies
 
-[Docs](DOCS.md) · [Privacy](PRIVACY.md) · [Terms](TERMS.md)
+[Privacy](PRIVACY.md) · [Terms](TERMS.md) · [Reference](https://anew.page/llms.txt)
 
 ## License
 

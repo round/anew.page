@@ -46,4 +46,4 @@ of your use of the service.
 
 There is none. anew publishes no contact address and no support channel: it holds no account and no
 data on your behalf, so there is nothing a channel would exist to discuss. The service is offered as
-it is, documented in [DOCS.md](DOCS.md) and at [llms.txt](https://anew.page/llms.txt).
+it is, documented at [llms.txt](https://anew.page/llms.txt).
