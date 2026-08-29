@@ -44,4 +44,6 @@ of your use of the service.
 
 ## Contact
 
-[Open an issue](https://github.com/round/anew.page/issues). anew publishes no contact address.
+There is none. anew publishes no contact address and no support channel: it holds no account and no
+data on your behalf, so there is nothing a channel would exist to discuss. The service is offered as
+it is, documented in [DOCS.md](DOCS.md) and at [llms.txt](https://anew.page/llms.txt).

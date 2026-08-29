@@ -40,8 +40,8 @@ hosting provider. No other processor receives this data.
   not receive the page, so it cannot appear in any log.
 - **Deletion** is inherent: stop sharing the URL and the page is unreachable. There is no copy to
   request the removal of.
-- **Questions, or a request about your data:** [open an issue](https://github.com/round/anew.page/issues). There is no address to
-  write to, and no data held about you for one to be needed.
+- **There is nothing to ask for.** anew publishes no support channel and no contact address, because
+  it holds no account and no data about you for either to act on.
 
 ## Treat published pages as public
 
