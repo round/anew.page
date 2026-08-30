@@ -4,7 +4,7 @@ description: "Encode self-contained HTML pages into anew.page URLs, and read the
 license: ISC
 compatibility: Works in any agent. Needs network access to https://anew.page, or a local runtime with brotli (node:zlib, or Python with the brotli package) to mint a URL with no network at all.
 metadata:
-  author: Maxim Leyzerovich
+  author: anew
   homepage: https://anew.page
   source: https://anew.page/.well-known/agent-skills/anew/SKILL.md
   version: "1.0.0"

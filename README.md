@@ -55,4 +55,4 @@ All point at the same endpoint.
 
 ## License
 
-ISC © Maxim Leyzerovich
+ISC © anew
