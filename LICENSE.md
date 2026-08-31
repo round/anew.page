@@ -1,9 +1,14 @@
-# Privacy & terms
+# License, privacy & terms
 
 *Last updated 31 August 2026*
 
 anew.page turns a self-contained HTML document into a URL that carries it. No accounts, no
 sign-in, no database of pages — the URL is the page. Using the service accepts what follows.
+
+## License
+
+© 2026 All Rights Reserved — the service and everything in this repository. What you
+publish through the service stays yours (*Your content*, below).
 
 ## Privacy
 

@@ -51,8 +51,4 @@ All point at the same endpoint.
 
 ## Documentation and policies
 
-[Privacy](PRIVACY.md) · [Terms](TERMS.md) · [Reference](https://anew.page/llms.txt)
-
-## License
-
-© 2026 All Rights Reserved
+[License](LICENSE.md#license) · [Privacy](LICENSE.md#privacy) · [Terms](LICENSE.md#terms) · [Reference](https://anew.page/llms.txt)
