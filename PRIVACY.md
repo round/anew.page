@@ -1,53 +1,51 @@
 # Privacy
 
-*Last updated 16 August 2026*
+*Last updated 31 August 2026*
 
-anew.page turns a self-contained HTML document into a shareable URL. There are no accounts, no
-sign-in, and no database of pages. The URL *is* the page — the document is compressed into the link
-itself — so there is nothing on the server to look up, hand over, or lose.
+anew.page turns a self-contained HTML document into a URL that carries it. There are no accounts,
+no sign-in, and no database of pages — the URL is the page.
 
-## What is collected
+## What the server sees
 
-- **Nothing you write.** Page content is not stored server-side. It travels in the URL and is
-  decoded again when someone opens it.
-- **Operational request logs.** Ordinary web-server telemetry for each request: the requested URL,
-  the referring page, a shortened user-agent string, and the country your network resolves to.
-  Because an anew URL carries the page, the URL recorded for a page you create contains that page's
-  content.
-- **No cookies, no trackers, no third-party analytics, no advertising identifiers.**
+**Normal mode.** Every request — page views, writes, API, MCP, and A2A calls alike — is logged:
+the requested URL, the referring page, a shortened user-agent string, the country the network
+resolves to, and a timestamp. Because an anew URL carries its page, a logged URL contains that
+page's content.
 
-## Why
+**Privacy mode.** The document travels in the URL fragment, which browsers never send over the
+network. The page does not reach the server and cannot appear in any log — enforced by the design,
+not by a promise. Only the request for the empty app shell does.
 
-The logs exist to keep the service working — debugging failed writes, sizing limits, and spotting
-abuse. They are not used to build a profile, and they are never sold, rented, or shared for
-advertising.
+## What the data is used for
 
-## Who else sees it
+Security and performance — spotting abuse, debugging failures, sizing limits — and nothing else.
+There is no profiling, no advertising, no sale or sharing of data, no third-party analytics, and
+no tracking cookie. The service runs on Cloudflare, which as hosting provider sees the traffic —
+IP addresses included — and keeps its own edge logs; anew's logs do not record IPs. No other party
+receives the data.
 
-anew.page runs on Cloudflare Workers. Cloudflare processes and stores requests on our behalf as our
-hosting provider. No other processor receives this data.
+## Retention
 
-## How long it is kept
+Logs sit in Cloudflare's analytics store, which expires them on its own schedule (about three
+months at this writing). A successful write may render a screenshot of the page, cached publicly
+at the page's `.png` address. Nothing else is stored, and no retention or deletion timeline is
+promised.
 
-- Request logs are retained for **three months**, then deleted by Cloudflare.
-- A successful write may render a preview screenshot of the page, cached publicly at that page's
-  `.png` address for up to **30 days**. Anyone holding the URL can fetch it.
-- Page content itself is retained for **no time at all** — it is never written down.
+## No expectation of privacy or security
 
-## Your controls
+That is the nature of the service. Anyone holding a URL can open the page and read its source.
+URLs leak — into browser history, referrer headers, chat transcripts, and other people's server
+logs. The screenshot is served without authentication. No security of any kind is promised, in
+either mode. Do not put secrets in a page.
 
-- **Privacy mode** puts the page in the URL fragment, which browsers never transmit. The server does
-  not receive the page, so it cannot appear in any log.
-- **Deletion** is inherent: stop sharing the URL and the page is unreachable. There is no copy to
-  request the removal of.
-- **There is nothing to ask for.** anew publishes no support channel and no contact address, because
-  it holds no account and no data about you for either to act on.
+There is nothing to request the deletion of: no account, no stored page, no profile. Stop sharing
+a URL and its page is unreachable.
 
-## Treat published pages as public
+## Contact
 
-Anyone with the URL can open the page and read its source, and the preview screenshot is served
-without authentication. Do not put secrets in a page.
+The [issue tracker](https://github.com/round/anew.page/issues) of this repository. No response is
+promised.
 
 ## Changes
 
-Material changes will be reflected in the date at the top of this document.
+Material changes move the date at the top of this document.
