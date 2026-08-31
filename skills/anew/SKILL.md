@@ -1,7 +1,7 @@
 ---
 name: anew
 description: "Encode self-contained HTML pages into anew.page URLs, and read the HTML back out of one. Use when a user wants to publish a one-page site or a redirect, or to edit a page they already have a URL for."
-license: ISC
+license: © 2026 All Rights Reserved
 compatibility: Works in any agent. Needs network access to https://anew.page, or a local runtime with brotli (node:zlib, or Python with the brotli package) to mint a URL with no network at all.
 metadata:
   author: anew
