@@ -2,8 +2,8 @@
 
 ## Privacy
 
-Pages are not stored; the URL is the page. Server logs record IP addresses and requested URLs, used only to operate the service and prevent abuse. A saved page may get a public preview image at its `.png` address. No cookies, no accounts, no data sold or shared. Questions: the [issue tracker](https://github.com/round/anew.page/issues).
+The service processes only the technical data inherent in any web request, solely to operate the service. No personal data is otherwise collected, sold, or shared. Contact: the [issue tracker](https://github.com/round/anew.page/issues).
 
 ## Terms
 
-Your content is yours and your responsibility. Every URL is public, immutable, and cannot be deleted. No unlawful use, impersonation, malware, phishing, or abuse. Service may be refused. Provided as is, without warranty; the operator is not liable for any damages to the fullest extent permitted by law. This file is the current policy and may change.
+You are solely responsible for content you publish and must have the right to publish it. Unlawful use is prohibited. The service is provided as is, without warranty of any kind; to the maximum extent permitted by law, the operator disclaims all liability arising from its use, and you agree to indemnify the operator against claims arising from your content. Use of the service constitutes acceptance of these terms.
