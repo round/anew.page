@@ -2,7 +2,7 @@
 
 ## Privacy
 
-Technical and usage data is processed to operate and protect the service. It is not sold or used for any other purpose.
+Data is processed to operate the service and is not sold or used for any other purposes.
 
 ## Terms
 
