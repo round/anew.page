@@ -2,7 +2,7 @@
 
 ## Privacy
 
-Data is processed to operate the service and is not sold or used for any other purposes.
+Information is processed to operate the service and is not sold or used for any other purposes.
 
 ## Terms
 
