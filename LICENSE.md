@@ -6,4 +6,4 @@ Data is processed to operate the service and is not sold or used for any other p
 
 ## Terms
 
-The operator does not author, endorse, or review published pages. Users are responsible for what they publish. Unlawful use is prohibited. The service is provided "as is". The operator is not liable for the service or anything published through it.
+Pages are published by users, who are responsible for them; the operator does not author, endorse, or review them. Unlawful use is prohibited, the service is provided "as is", and the operator is not liable for it or anything published through it.
