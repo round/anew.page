@@ -6,10 +6,8 @@ Technical and usage data is processed to operate and protect the service. It is 
 
 ## Terms
 
-- **User content.** Pages are user content. The operator does not author, endorse, or review them, and may remove or block any of them.
-- **Responsibility.** You are solely responsible for what you publish, must hold the rights to it, and grant the operator the rights needed to host and display it.
-- **Acceptable use.** Unlawful use is prohibited.
-- **No warranty.** The service is provided as is, without warranty of any kind.
-- **No liability.** To the maximum extent permitted by law, the operator disclaims all liability arising from the service.
-- **Indemnity.** You will indemnify the operator against claims arising from your content.
-- **Acceptance.** Using the service is acceptance of these terms.
+By using the service you accept these terms.
+
+Pages are user content. The operator does not author, endorse, or review them, and may remove or block any page. You are solely responsible for what you publish, must hold the rights to it, and grant the operator the rights needed to host and display it. Unlawful use is prohibited.
+
+The service is provided "as is" and "as available", without warranty of any kind. To the maximum extent permitted by law, the operator disclaims all liability arising from the service, and you agree to indemnify the operator against claims arising from your content.
