@@ -6,4 +6,4 @@ Information is processed to operate the service and is not sold or used for any 
 
 ## Terms
 
-The service is provided "as is" without any liability. Unlawful or abusive use is prohibited.
+The service is provided "as is" without any liability; unlawful use and abuse are prohibited.
