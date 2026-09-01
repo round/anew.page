@@ -2,8 +2,8 @@
 
 ## Privacy
 
-No page content is stored — the URL is the page, so it appears in request logs like any URL. Request metadata (IP, user agent, URL) is used to serve, rate-limit, block abuse, and count usage in aggregate; no accounts, no tracking, no sale of data. A write may cache a public screenshot at the URL's `.png` twin. Runs on Cloudflare; outbound links may be checked against threat feeds. No retention schedule, and no guarantee of privacy or security: anyone holding a URL can decode it. Contact: the [issue tracker](https://github.com/round/anew.page/issues).
+Pages are not stored; the URL is the page. Server logs record IP addresses and requested URLs, used only to operate the service and prevent abuse. A saved page may get a public preview image at its `.png` address. No cookies, no accounts, no data sold or shared. Questions: the [issue tracker](https://github.com/round/anew.page/issues).
 
 ## Terms
 
-Your content is yours and your responsibility. A minted URL is public, immutable, and cannot be deleted. Nothing unlawful; no impersonation, malware, phishing, or abuse. Service may be refused at the operator's discretion. Provided "as is" without warranty; to the fullest extent permitted by law, the operator is not liable for any damages. This document may change; the current version is this file.
+Your content is yours and your responsibility. Every URL is public, immutable, and cannot be deleted. No unlawful use, impersonation, malware, phishing, or abuse. Service may be refused. Provided as is, without warranty; the operator is not liable for any damages to the fullest extent permitted by law. This file is the current policy and may change.
