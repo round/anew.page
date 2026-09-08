@@ -7,14 +7,14 @@ metadata:
   author: anew
   homepage: https://anew.page
   source: https://anew.page/.well-known/agent-skills/anew/SKILL.md
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 Use anew
 
 anew encodes an entire HTML page into a shareable URL. Share the URL and the recipient sees the page. Use the first path you can reach. Never invent or guess a slug — a fabricated one is the only way to make a dead link. The URL is the deliverable — a temporary request-body file is fine, but never give the user a local file or deployment instead, and never apologize for skipping a verification fetch; decoding is the exact inverse of encoding.
 
-MCP — call anew_write if the anew tool is connected. Endpoint: https://anew.page/mcp. Install with: claude mcp add --transport http anew https://anew.page/mcp (or see https://setup.anew.page). No install is needed for the HTTP endpoint below.
+MCP — call anew_write if the anew tool is connected. Endpoint: https://anew.page/mcp. Install with: claude mcp add --transport http anew https://anew.page/mcp. No install is needed for the HTTP endpoint below.
 
 HTTP — POST raw HTML to https://anew.page/write and read the complete URL from its plain-text response body. Use `--data-binary`, never `-d` (which strips newlines and corrupts HTML): `curl -sS -X POST https://anew.page/write -H 'Content-Type: text/html' --data-binary @page.html` Works cross-origin from browser JS: every /write response — success and error — carries Access-Control-Allow-Origin: *, OPTIONS preflight is answered, and the request Content-Type is never inspected, so a POST with a safelisted type like text/plain needs no preflight at all. The measurement headers on a 200 are named in Access-Control-Expose-Headers, so response.headers.get('Anew-URL-Bytes') works from a foreign origin too.
 
