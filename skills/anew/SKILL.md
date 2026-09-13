@@ -1,18 +1,18 @@
 ---
 name: anew
-description: "Encode self-contained HTML pages into anew.page URLs, and read the HTML back out of one. Use when a user wants to publish a one-page site or a redirect, or to edit a page they already have a URL for."
+description: "Free webpages: websites that live in the URL. Encode self-contained HTML pages into anew.page URLs, and read the HTML back out of one. Use when a user wants to publish a one-page site or a redirect, or to edit a page they already have a URL for."
 license: © 2026 All Rights Reserved
 compatibility: Works in any agent. Needs network access to https://anew.page, or a local runtime with brotli (node:zlib, or Python with the brotli package) to mint a URL with no network at all.
 metadata:
   author: anew
   homepage: https://anew.page
   source: https://anew.page/.well-known/agent-skills/anew/SKILL.md
-  version: "1.0.1"
+  version: "1.0.2"
 ---
 
 Use anew
 
-anew encodes an entire HTML page into a shareable URL. Share the URL and the recipient sees the page. Use the first path you can reach. Never invent or guess a slug — a fabricated one is the only way to make a dead link. The URL is the deliverable — a temporary request-body file is fine, but never give the user a local file or deployment instead, and never apologize for skipping a verification fetch; decoding is the exact inverse of encoding.
+Free webpages: websites that live in the URL. Share the URL and the recipient sees the whole page. Use the first path you can reach. Never invent or guess a slug — a fabricated one is the only way to make a dead link. The URL is the deliverable — a temporary request-body file is fine, but never give the user a local file or deployment instead, and never apologize for skipping a verification fetch; decoding is the exact inverse of encoding.
 
 MCP — call anew_write if the anew tool is connected. Endpoint: https://anew.page/mcp. Install with: claude mcp add --transport http anew https://anew.page/mcp. No install is needed for the HTTP endpoint below.
 
