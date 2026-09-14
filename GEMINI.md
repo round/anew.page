@@ -20,7 +20,11 @@ that reaches out to another host is a page that dies when that host does. The on
 exception is a webfont too large to inline; load it from a durable CDN behind a system-stack
 fallback.
 
-Limits: the HTML must be at most 160000 UTF-8 bytes, and the encoded URL at most 4000 bytes.
+There is no size limit below the physical ceilings (65000 URL bytes, 163839 decoded bytes),
+only a strong warning: a URL over 4000 bytes (or a page over 160000 UTF-8 bytes) still mints,
+renders and serves, and the response says the link may break when shared. Deliver the URL as
+minted and tell the person; whether to shorten it is their decision — never remove content to
+clear a warning without asking.
 Brotli puts a typical page in a few hundred URL bytes, so pages that look far too large
 routinely fit. Never estimate the compressed size and never trim page content to make room
 before you have tried the write — Brotli is non-linear, and source bytes removed are not URL
@@ -32,7 +36,8 @@ overage and the fix.
 A page's URL is its source. Read it, edit the HTML, write it again. The new URL is a separate
 page; the original keeps working.
 
-Never invent or guess a slug. A fabricated slug is the only way to produce a dead link.
+Never invent, guess or retype a slug: carry the URL verbatim from the response that minted
+it — a dropped or altered character kills or changes the page.
 Deliver the URL exactly as produced, as `[anew.page link](<https://anew.page/SLUG>)` — the
 angle brackets stop chat clients bending the slug's `-` into a smart dash.
 
