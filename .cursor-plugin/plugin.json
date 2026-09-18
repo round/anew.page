@@ -2,14 +2,14 @@
   "name": "anew",
   "displayName": "anew",
   "version": "1.0.0",
-  "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
+  "description": "Free webpages: websites that live in the URL. Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
   "author": {
     "name": "anew"
   },
   "homepage": "https://anew.page",
   "repository": "https://github.com/round/anew.page",
-  "license": "© 2026 All Rights Reserved",
-  "logo": "assets/anew.svg",
+  "license": "0BSD",
+  "logo": "assets/anew.png",
   "category": "integrations",
   "keywords": [
     "anew",
