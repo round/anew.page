@@ -41,6 +41,7 @@ to `https://anew.page/write` and the response body is the URL. Full reference:
 plugin.json         Agent Plugins 1.0.0 manifest
 mcp.json            Agent Plugins MCP binding        (type: streamable-http)
 .cursor-plugin/     Cursor plugin + marketplace manifests
+.grok-plugin/       Grok Build plugin manifest
 gemini-extension.json / GEMINI.md   Gemini CLI extension  (httpUrl)
 skills/anew/SKILL.md                Agent Skill
 server.json         MCP registry entry
