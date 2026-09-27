@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "page.anew/anew",
   "title": "anew",
-  "description": "Encode self-contained HTML pages into shareable URLs.",
-  "version": "1.0.0",
+  "description": "Free webpages: websites that live in the URL.",
+  "version": "1.0.2",
   "websiteUrl": "https://anew.page",
   "repository": {
     "url": "https://github.com/round/anew.page",
