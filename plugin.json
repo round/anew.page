@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "anew",
-  "version": "1.0.0",
-  "description": "Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
+  "version": "1.0.1",
+  "description": "Free webpages: websites that live in the URL. Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
   "author": {
     "name": "anew",
     "url": "https://github.com/round"
@@ -19,5 +19,91 @@
     "sharing",
     "webpage",
     "static-site"
-  ]
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "anew",
+        "shortDescription": "Websites that live in the URL.",
+        "longDescription": "Free webpages: websites that live in the URL. anew encodes a complete, self-contained HTML document into a shareable URL. The page is compressed into the link itself, so there is no account, no database, and no deploy step — you get a URL back immediately, and anyone who opens it sees the page.\n\nBecause the URL is the page, reading one back gives you its exact HTML. That makes editing a round trip: read the link, change the markup, write it again. Every write mints a new URL and leaves the original working, so a link you have already shared never breaks.\n\nTwo tools. anew_write takes one self-contained HTML document and returns its URL, along with the page's size, with the share warning when one applies. anew_read takes an anew.page URL and returns the HTML encoded in it.\n\nNothing is stored server-side. There is no page to delete, no account to manage, and no authentication to set up — connect the endpoint and it works.",
+        "developerName": "anew",
+        "category": "Productivity",
+        "capabilities": [
+          "Publish a page as a URL",
+          "Read a page back to its HTML"
+        ],
+        "websiteURL": "https://anew.page",
+        "supportURL": "https://github.com/round/anew.page/issues",
+        "privacyPolicyURL": "https://github.com/round/anew.page/blob/main/LICENSE.md#privacy",
+        "termsOfServiceURL": "https://github.com/round/anew.page/blob/main/LICENSE.md#terms",
+        "defaultPrompt": [
+          "Make me a one-page résumé from this text and give me the link.",
+          "Take the page at this anew.page URL, change the heading colour to red, and send me the new link.",
+          "Build a small interactive tip calculator as a page I can share with my team."
+        ],
+        "composerIcon": "./assets/anew.png",
+        "logo": "./assets/anew.png"
+      },
+      "onboardingSkill": "./skills/anew/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Create a simple shareable page.",
+              "prompt": "Create a self-contained anew.page with the heading \"Hello from anew\" and one short paragraph, then give me its shareable link.",
+              "tools_triggered": "anew_write",
+              "expected_behavior": "Returns the minted anew.page URL verbatim with its byte measurements; the page shows the requested heading and paragraph."
+            },
+            {
+              "description": "Create an interactive self-contained page.",
+              "prompt": "Build a self-contained interactive tip calculator with inline CSS and JavaScript, then give me an anew.page link.",
+              "tools_triggered": "anew_write",
+              "expected_behavior": "Returns a working anew.page URL with byte measurements; the page contains the requested interactive calculator without required external assets."
+            },
+            {
+              "description": "Read exact author HTML from a full anew.page URL.",
+              "prompt": "Read the exact author HTML encoded in https://anew.page/PGgxPmEgbmV3IGludGVybmV0IHN0YXJ0cyB3aXRoIGFuZXcucGFnZTwvaDE- and return the source, not the rendered DOM.",
+              "tools_triggered": "anew_read",
+              "expected_behavior": "Returns exactly <h1>a new internet starts with anew.page</h1> together with the canonical URL and byte metadata."
+            },
+            {
+              "description": "Read a bare slug as a typed HTML resource.",
+              "prompt": "Decode the bare anew slug PGgxPmEgbmV3IGludGVybmV0IHN0YXJ0cyB3aXRoIGFuZXcucGFnZTwvaDE- and return it as an HTML resource.",
+              "tools_triggered": "anew_read",
+              "expected_behavior": "Returns one text/html embedded resource containing the exact heading HTML, plus the canonical URL and byte metadata."
+            },
+            {
+              "description": "Round-trip an edit without overwriting the original page.",
+              "prompt": "Read https://anew.page/PGgxPmEgbmV3IGludGVybmV0IHN0YXJ0cyB3aXRoIGFuZXcucGFnZTwvaDE-, change the heading to \"Revised with anew\", and return a new anew.page link.",
+              "tools_triggered": "anew_read, anew_write",
+              "expected_behavior": "Reads the exact original HTML, returns a new working URL containing the revised heading, and leaves the original URL unchanged."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Do not trigger for deletion requests.",
+              "prompt": "Permanently delete this anew.page URL so nobody can open it again.",
+              "expected_behavior": "The app should not be invoked because anew provides no deletion capability."
+            },
+            {
+              "description": "Do not trigger for page discovery or history requests.",
+              "prompt": "List everything someone else has published on anew.page this week.",
+              "expected_behavior": "The app should not be invoked because anew has no page index, account history, or search workflow."
+            },
+            {
+              "description": "Do not trigger for arbitrary website reading.",
+              "prompt": "Fetch the HTML source of https://example.com and summarize it.",
+              "expected_behavior": "The app should not be invoked because anew_read only decodes HTML carried by anew.page URLs or slugs and does not fetch arbitrary sites."
+            }
+          ]
+        },
+        "demo_recording_url": "https://anew.page/demo/anew-plugin-demo-20260901-v3.mp4",
+        "commerce": false,
+        "commerce_description": "anew sells nothing and processes no payments. Both tools work without an account."
+      },
+      "publication": {
+        "release_notes": "The listing, starter prompts and review cases now ship in the manifest under extensions.com.openai. The two tools are unchanged."
+      }
+    }
+  }
 }

@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Free webpages: websites that live in the URL. anew.page encodes a self-contained HTML document into a shareable URL.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {

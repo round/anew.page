@@ -1,7 +1,7 @@
 {
   "name": "anew",
   "displayName": "anew",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Free webpages: websites that live in the URL. Encode a self-contained HTML document into a shareable anew.page URL, and read the HTML back out of one. No account, no hosting, no deploy step.",
   "author": {
     "name": "anew"

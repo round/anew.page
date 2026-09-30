@@ -28,6 +28,10 @@ gemini extensions install https://github.com/round/anew.page
 npx skills add round/anew.page
 ```
 
+```bash
+codex plugin marketplace add round/anew.page
+```
+
 Cursor, VS Code, Codex, LM Studio, Goose and Kiro take the server URL directly, or use the
 one-click links at [anew.page](https://anew.page). No client is required at all — `POST` raw HTML
 to `https://anew.page/write` and the response body is the URL. Full reference:
@@ -38,7 +42,8 @@ to `https://anew.page/write` and the response body is the URL. Full reference:
 ```
 .claude-plugin/     Claude Code plugin + marketplace manifests
 .mcp.json           Claude Code MCP binding          (type: http)
-plugin.json         Agent Plugins 1.0.0 manifest
+plugin.json         Agent Plugins 1.0.0 manifest; the ChatGPT and Codex listing under extensions.com.openai
+.agents/plugins/    ChatGPT and Codex repo marketplace
 mcp.json            Agent Plugins MCP binding        (type: streamable-http)
 .cursor-plugin/     Cursor plugin + marketplace manifests
 .grok-plugin/       Grok Build plugin manifest
