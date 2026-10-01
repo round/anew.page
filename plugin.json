@@ -101,7 +101,7 @@
         "commerce_description": "anew sells nothing and processes no payments. Every tool works without an account."
       },
       "publication": {
-        "release_notes": "The listing, starter prompts and review cases ship in the manifest under extensions.com.openai, with the listing text as already published. On the server: the page runs live in its card, Edit opens the anew editor, and two entry points open the editor, anew in the sidebar and anew.page beside a chat."
+        "release_notes": "The listing, starter prompts and review cases ship in the manifest under extensions.com.openai, with the listing text as already published. On the server: the page runs live in its card, Edit opens the anew editor, and two entry points open the editor, anew in the sidebar and Page Editor beside a chat. Ownership: anew.page is the submitting developer's own site. Its domain is verified in the plugin portal, the structured data on https://anew.page lists this ChatGPT listing under sameAs, and this package is published from https://github.com/round/anew.page."
       }
     }
   }
