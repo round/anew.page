@@ -42,7 +42,9 @@
           "Build a small interactive tip calculator as a page I can share with my team."
         ],
         "composerIcon": "./assets/anew.png",
-        "logo": "./assets/anew.png"
+        "composerIconDark": "./assets/anew-dark.png",
+        "logo": "./assets/anew.png",
+        "logoDark": "./assets/anew-dark.png"
       },
       "onboardingSkill": "./skills/anew/SKILL.md",
       "review": {
