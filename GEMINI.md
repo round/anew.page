@@ -20,11 +20,11 @@ that reaches out to another host is a page that dies when that host does. The on
 exception is a webfont too large to inline; load it from a durable CDN behind a system-stack
 fallback.
 
-There is no size limit below the physical ceilings (65000 URL bytes, 163839 decoded bytes),
-only a strong warning: a URL over 4000 bytes (or a page over 160000 UTF-8 bytes) still mints,
-renders and serves, and the response says the link may break when shared. Deliver the URL as
-minted and tell the person; whether to shorten it is their decision — never remove content to
-clear a warning without asking.
+There are two size limits, and past either no link is issued: the finished URL may be at most
+4000 bytes (apps cut longer links short, and a cut link is a dead page) and the HTML at most
+1048576 bytes decoded (the server's decode cap). Past one the write is refused with an error that
+states the size and the overage. Tell the person the page is too large for a link — never remove
+content, sections or features to make it fit without asking.
 Brotli puts a typical page in a few hundred URL bytes, so pages that look far too large
 routinely fit. Never estimate the compressed size and never trim page content to make room
 before you have tried the write — Brotli is non-linear, and source bytes removed are not URL
