@@ -10,7 +10,7 @@ metadata:
   version: "1.0.2"
 ---
 
-Use anew
+Use anew.page
 
 Free webpages: websites that live in the URL. Share the URL and the recipient sees the whole page. Use the first path you can reach. Never invent, guess or retype a slug: carry the URL verbatim from the response that minted it — a dropped or altered character kills or changes the page. The URL is the deliverable — a temporary request-body file is fine, but never give the user a local file or deployment instead, and no verification fetch is needed; decoding is the exact inverse of encoding.
 
