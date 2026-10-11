@@ -1,60 +1,38 @@
 # anew
 
-**[anew.page](https://anew.page) encodes a self-contained HTML document into a shareable URL.**
-The whole page lives in the link — no account, no database, no deploy step.
+**[anew.page](https://anew.page) makes free webpages that live in the URL.** Give it one self-contained
+HTML file and you get back a link that carries the whole page. No account, no hosting, nothing stored.
 
-This repository holds the plugin, extension and skill manifests that connect agents to the hosted
-anew MCP server at `https://anew.page/mcp`. It contains no product source.
-
-## Tools
-
-- `anew_write` — a self-contained HTML document in, an anew.page URL out.
-- `anew_read` — an anew.page URL in, the HTML encoded in it out.
-
-Both are read-only. Every write mints a new URL and leaves the original working, so editing a page
-is read → edit → write.
-
-## Install
+## Try it
 
 ```bash
-claude mcp add --transport http anew https://anew.page/mcp
+curl -sS --data-binary @page.html https://anew.page/write
 ```
 
-```bash
-gemini extensions install https://github.com/round/anew.page
-```
+The response body is the page's URL. No key, no signup.
 
-```bash
-npx skills add round/anew.page
-```
+## Connect your agent
 
-```bash
-codex plugin marketplace add round/anew.page
-```
+| Client | Install |
+| --- | --- |
+| Claude Code | `claude mcp add --transport http anew https://anew.page/mcp` |
+| Gemini CLI | `gemini extensions install https://github.com/round/anew.page` |
+| Codex | `codex plugin marketplace add round/anew.page` |
+| Any Agent Skills client | `npx skills add round/anew.page` |
+| Cursor, VS Code, LM Studio, Goose, Kiro | Add `https://anew.page/mcp` as an HTTP MCP server, or use the one-click links at [anew.page](https://anew.page) |
 
-Cursor, VS Code, Codex, LM Studio, Goose and Kiro take the server URL directly, or use the
-one-click links at [anew.page](https://anew.page). No client is required at all — `POST` raw HTML
-to `https://anew.page/write` and the response body is the URL. Full reference:
-[llms.txt](https://anew.page/llms.txt).
+The server exposes two tools: `anew_write` (HTML in, URL out) and `anew_read` (URL in, HTML out).
 
-## Contents
+## Rules of a page
 
-```
-.claude-plugin/     Claude Code plugin + marketplace manifests
-.mcp.json           Claude Code MCP binding          (type: http)
-plugin.json         Agent Plugins 1.0.0 manifest; the ChatGPT and Codex listing under extensions.com.openai
-.agents/plugins/    ChatGPT and Codex repo marketplace
-mcp.json            Agent Plugins MCP binding        (type: streamable-http)
-.cursor-plugin/     Cursor plugin + marketplace manifests
-.grok-plugin/       Grok Build plugin manifest
-gemini-extension.json / GEMINI.md   Gemini CLI extension  (httpUrl)
-skills/anew/SKILL.md                Agent Skill
-server.json         MCP registry entry
-```
+- **Inline everything.** CSS, JS and images go in the file (data: URIs, inline SVG). Webfonts may load from a CDN.
+- **4000-byte URL limit.** Pages are Brotli-compressed into the link; past the limit no link is issued and the error says by how much. Post to measure, don't estimate.
+- **Links are immutable.** To edit, read the page, change the HTML, write it again. The new link is a new page; the old one keeps working.
 
-The three MCP bindings say the same thing three ways because the ecosystems disagree on the key.
-All point at the same endpoint.
+## Reference
 
-## Documentation and policies
+Full API (HTTP, MCP, A2A, local minting, rate limits): [llms.txt](https://anew.page/llms.txt) ·
+[License](LICENSE.md#license) · [Privacy](LICENSE.md#privacy) · [Terms](LICENSE.md#terms)
 
-[License](LICENSE.md#license) · [Privacy](LICENSE.md#privacy) · [Terms](LICENSE.md#terms) · [Reference](https://anew.page/llms.txt)
+This repo holds only the plugin, extension and skill manifests and `server.json` (the MCP registry
+entry), all pointing at `https://anew.page/mcp`. No product source.
