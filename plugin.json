@@ -31,8 +31,8 @@
         "capabilities": [],
         "websiteURL": "https://anew.page",
         "supportURL": "https://github.com/round/anew.page/security",
-        "privacyPolicyURL": "https://github.com/round/anew.page?tab=License-1-ov-file#privacy",
-        "termsOfServiceURL": "https://github.com/round/anew.page?tab=License-1-ov-file#terms",
+        "privacyPolicyURL": "https://anew.page/privacy",
+        "termsOfServiceURL": "https://anew.page/terms",
         "defaultPrompt": [
           "Make me a one-page résumé from this text and give me the link.",
           "Take the page at this anew.page URL, change the heading colour to red, and send me the new link.",

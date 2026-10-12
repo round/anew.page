@@ -13,15 +13,14 @@ The response body is the page's URL. No key, no signup.
 
 ## Connect your agent
 
-| Client | Install |
-| --- | --- |
-| Claude Code | `claude mcp add --transport http anew https://anew.page/mcp` |
-| Gemini CLI | `gemini extensions install https://github.com/round/anew.page` |
-| Codex | `codex plugin marketplace add round/anew.page` |
-| Any Agent Skills client | `npx skills add round/anew.page` |
-| Cursor, VS Code, LM Studio, Goose, Kiro | Add `https://anew.page/mcp` as an HTTP MCP server, or use the one-click links at [anew.page](https://anew.page) |
+The MCP server is `https://anew.page/mcp`: HTTP transport, no auth, two tools. `anew_write` takes
+HTML and returns a URL; `anew_read` takes a URL and returns the HTML. Add the server URL to any client
+that accepts one, or install this repository where your client has a plugin, extension or skill
+marketplace. The one-click installs are at [anew.page](https://anew.page).
 
-The server exposes two tools: `anew_write` (HTML in, URL out) and `anew_read` (URL in, HTML out).
+The [skill](skills/anew/SKILL.md) is the full how-to for an agent writing pages. The
+[reference](https://anew.page/llms.txt) covers the HTTP, MCP and A2A interfaces, limits and local
+minting.
 
 ## Rules of a page
 
@@ -29,10 +28,9 @@ The server exposes two tools: `anew_write` (HTML in, URL out) and `anew_read` (U
 - **4000-byte URL limit.** Pages are Brotli-compressed into the link; past the limit no link is issued and the error says by how much. Post to measure, don't estimate.
 - **Links are immutable.** To edit, read the page, change the HTML, write it again. The new link is a new page; the old one keeps working.
 
-## Reference
+## Policies
 
-Full API (HTTP, MCP, A2A, local minting, rate limits): [llms.txt](https://anew.page/llms.txt) ·
-[License](LICENSE.md#license) · [Privacy](LICENSE.md#privacy) · [Terms](LICENSE.md#terms)
+[License](https://anew.page/license) · [Privacy](https://anew.page/privacy) · [Terms](https://anew.page/terms)
 
-This repo holds only the plugin, extension and skill manifests and `server.json` (the MCP registry
-entry), all pointing at `https://anew.page/mcp`. No product source.
+This repo holds the plugin, extension and skill manifests and `server.json` (the MCP registry entry),
+all pointing at `https://anew.page/mcp`. No product source.
